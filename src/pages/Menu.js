@@ -55,7 +55,7 @@ export default function Menu() {
                             <MenuList>
                                 <MenuItem onClick={() => setScreen(0)}>Menu</MenuItem>
                                 <MenuItem onClick={() => setScreen(1)}>Acervo de livros</MenuItem>
-                                <MenuItem onClick={() => setScreen(2)}>Registrar</MenuItem>
+                                <MenuItem onClick={() => setScreen(2)}>Registrar seu livro</MenuItem>
                                 <MenuItem onClick={() => setScreen(3)}>Emprestimos</MenuItem>
                                 <MenuItem onClick={() => setScreen(4)}>Recados</MenuItem>
                                 <MenuItem onClick={() => setScreen(5)}>Contato</MenuItem>
