@@ -5,12 +5,17 @@ import {
     Grid,
     Paper,
     TextField,
-    Checkbox
+    Checkbox,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
 }
     from '@material-ui/core';
 
 import Firebase from '../services/FirebaseConnect'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 function Login() {
     let history = useHistory();
@@ -19,6 +24,11 @@ function Login() {
     const [msg, setMsg] = useState("")
     const [msg2, setMsg2] = useState("")
     const [lembreme, setLembreme] = useState(false)
+    const [erecado] = useState(true)
+    const [open, setOpen] = React.useState(true);
+
+    const handleClose = () => {
+        setOpen(false); };
 
     useLayoutEffect(() => {
 
@@ -30,6 +40,12 @@ function Login() {
             setLembreme(true)
         }
     }, [])
+
+    const registra = () => {
+        if (erecado === true) {
+            history.push("/recado")
+        }
+    }
 
     const cadastro = () => {
         if (lembreme === false) {
@@ -96,6 +112,28 @@ function Login() {
     }
     return (
         <div>
+
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description">
+            <DialogTitle id="alert-dialog-title">{"Seja bem vindo ao site neighborbook.com!!"}</DialogTitle>
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+                Aqui você pode cadastrar seus livros para empréstimo, assim como
+                pedir empréstimos para seus "vizinhos", para cadastrar seus livros
+                ou requerir empréstimos você deve efetuar seu cadastro :)
+                <br/>Também é possível deixar um feedback ou recado clicando no botão "CONTATO".
+            </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                    Prosseguir para o Login
+                </Button>
+            </DialogActions>
+            </Dialog>
+
             <Grid container spacing={1}>
                 <Grid item sm={8} xs={12}>
 
@@ -149,7 +187,7 @@ function Login() {
                         <br/>
                         <br/>
                         <Button
-                            onClick={login}
+                            onClick={registra}
                             size="large"
                             variant="contained"
                             color="secondary"

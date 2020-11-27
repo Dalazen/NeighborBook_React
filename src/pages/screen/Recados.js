@@ -26,7 +26,6 @@ export default function LivroLista(props) {
             .database()
             .ref(`/recados`)
             .on('value', snapchot => {
-                // converter objetos em listas
                 if (snapchot.val()) {
                     let dados = snapchot.val()
                     const keys = Object.keys(dados)
@@ -47,15 +46,19 @@ export default function LivroLista(props) {
                     <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left">Mensagem</TableCell>
-                                <TableCell align="right">Autor(a)</TableCell>
+                                <TableCell align="left">Assunto</TableCell>
+                                <TableCell align="center">Mensagem</TableCell>
+                                <TableCell align="left">Autor(a)</TableCell>
+                                <TableCell align="center">Email</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {lista.map((item, key) => {
                                 return <TableRow key={key}>
-                                    <TableCell align="left">{item.recado}</TableCell>
-                                    <TableCell align="right">{item.autor}</TableCell>
+                                    <TableCell align="left">{item.assunto}</TableCell>
+                                    <TableCell align="center">{item.recado}</TableCell>
+                                    <TableCell align="left">{item.autor}</TableCell>
+                                    <TableCell align="center">{item.email}</TableCell>
                                 </TableRow>
                             }
                             )}
@@ -66,7 +69,7 @@ export default function LivroLista(props) {
             <Grid item sm={12} xs={12}>
                 <Button
                     variant="contained"
-                    onClick={() => history.push('/RecadosRegistro')}
+                    onClick={() => history.push('/registrorecado')}
                     color="primary"
                     startIcon={<AddCircleIcon />}>
                     Novo Recado

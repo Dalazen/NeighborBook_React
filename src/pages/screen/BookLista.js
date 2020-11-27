@@ -54,8 +54,8 @@ export default function LivroLista(props) {
                     <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="left">Nome do Livro</TableCell>
-                                <TableCell align="left">Autor(a)</TableCell>
+                                <TableCell align="center">Nome do Livro</TableCell>
+                                <TableCell align="center">Autor(a)</TableCell>
                                 <TableCell align="center">Editora</TableCell>
                                 <TableCell align="center">Volume</TableCell>
                                 <TableCell align="right">Opções</TableCell>
@@ -64,8 +64,8 @@ export default function LivroLista(props) {
                         <TableBody>
                             {lista.map((item, key) => {
                                 return <TableRow key={key}>
-                                    <TableCell align="left">{item.nome}</TableCell>
-                                    <TableCell align="left">{item.autor}</TableCell>
+                                    <TableCell align="center">{item.nome}</TableCell>
+                                    <TableCell align="center">{item.autor}</TableCell>
                                     <TableCell align="center">{item.editora}</TableCell>
                                     <TableCell align="center">{item.volume}</TableCell>
                                     <TableCell align="right">

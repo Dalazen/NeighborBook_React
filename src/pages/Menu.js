@@ -8,8 +8,8 @@ import {
     MenuItem
 }
     from '@material-ui/core';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { useHistory } from "react-router-dom";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { useHistory } from "react-router-dom"
 import Firebase from '../services/FirebaseConnect'
 import BookRegistro from './screen/BookRegistro'
 import BookLista from './screen/BookLista'
