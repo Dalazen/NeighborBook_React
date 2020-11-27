@@ -65,12 +65,14 @@ export default function Menu() {
                     <Paper elevation={3}>
                         {screen === 0 &&
                             <> 
-                            <br/>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Bem Vindo!!<br/>
+                            <br/>⠀Bem Vindo!!<br/>
                             <br/>⠀Este site tem por objetivo criar uma biblioteca comunitária,
                             permitindo aos usuários cadastrar seus livros e requerir empréstimos dos
                             livros já cadastrados, entretanto como o objetivo do mesmo é criar um "laço"
                             entre os usuários, qualquer usuário pode adicionar ou remover os livros cadastrados
                             então use esta função com cuidado!!<br/>
+                            <br/>⠀Para prosseguir em plataforma mobile, selecione uma opção no Menu em cima. <br/>
+                            <br/>↑↑↑↑↑↑ ⠀↑↑↑↑↑↑ ⠀↑↑↑↑↑↑ <br/>
                             <br/>⠀Para prosseguir, selecione uma opção no Menu ao lado. <br/>
                             <br/>← ← ← ← ← ← ⠀ ← ← ← ← ← ← ⠀ ← ← ← ← ← ← <br/>
                             <br/>⠀Qualquer usuário tóxico será banido imediamente!<br/>
