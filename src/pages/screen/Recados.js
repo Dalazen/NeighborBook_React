@@ -75,7 +75,6 @@ export default function LivroLista(props) {
                     Novo Recado
                     </Button>
             </Grid>
-
         </Grid>
     )
 }

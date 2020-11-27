@@ -15,7 +15,6 @@ import BookRegistro from './screen/BookRegistro'
 import BookLista from './screen/BookLista'
 import BookEmprestimo from './screen/BookEmprestimo'
 import Recados from './screen/Recados'
-import Contato from './screen/Contato'
 
 export default function Menu() {
     let history = useHistory();
@@ -58,7 +57,6 @@ export default function Menu() {
                                 <MenuItem onClick={() => setScreen(2)}>Registrar seu livro</MenuItem>
                                 <MenuItem onClick={() => setScreen(3)}>Emprestimos</MenuItem>
                                 <MenuItem onClick={() => setScreen(4)}>Recados</MenuItem>
-                                <MenuItem onClick={() => setScreen(5)}>Contato</MenuItem>
                             </MenuList>
                         </Paper>
                     </Grid>
@@ -68,9 +66,14 @@ export default function Menu() {
                         {screen === 0 &&
                             <> 
                             <br/>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Bem Vindo!!<br/>
-                            <br/>⠀⠀⠀⠀⠀⠀⠀⠀Este site é destinado a todos que queiram cadastrar e/ou requerir empréstimo dos livros já cadastrados, como uma biblioteca entre "vizinhos"!<br/>
-                            <br/>⠀⠀⠀⠀⠀⠀⠀⠀Para prosseguir, selecione uma opção no Menu ao lado. <br/>
-                            <br/> ⠀⠀⠀⠀⠀⠀⠀⠀← ← ← ← ← ← ⠀ ← ← ← ← ← ← ⠀ ← ← ← ← ← ← <br/>
+                            <br/>⠀Este site tem por objetivo criar uma biblioteca comunitária,
+                            permitindo aos usuários cadastrar seus livros e requerir empréstimos dos
+                            livros já cadastrados, entretanto como o objetivo do mesmo é criar um "laço"
+                            entre os usuários, qualquer usuário pode adicionar ou remover os livros cadastrados
+                            então use esta função com cuidado!!<br/>
+                            <br/>⠀Para prosseguir, selecione uma opção no Menu ao lado. <br/>
+                            <br/>← ← ← ← ← ← ⠀ ← ← ← ← ← ← ⠀ ← ← ← ← ← ← <br/>
+                            <br/>⠀Qualquer usuário tóxico será banido imediamente!<br/>
                             <br/><br/>
                             </> }
                         {screen === 1 &&
@@ -81,10 +84,14 @@ export default function Menu() {
                             <BookEmprestimo setScreen={setScreen} /> }
                         {screen === 4 &&
                             <Recados setScreen={setScreen} /> }
-                        {screen === 5 &&
-                            <Contato setScreen={setScreen} /> }
 
                     </Paper>
+                    <br/>
+                    <br/>
+                    <footer> 
+                        Desenvolvido por Guilherme Dalazen
+                        <br/>Email: guilhermebatistellad@gmail.com
+                    </footer>
                 </Grid>
 
             </Grid>

@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Login from './pages/Login.js'
+import Login from './pages/Login'
 import Menu from './pages/Menu'
 import RecadosRegistro from './pages/RecadosRegistro'
 import Recados from './pages/screen/Recados'

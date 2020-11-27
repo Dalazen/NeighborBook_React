@@ -195,8 +195,12 @@ function Login() {
                             Contato
                         </Button>
                     </Paper>
+                    <footer> 
+                        Desenvolvido por Guilherme Dalazen
+                        <br/>Email: guilhermebatistellad@gmail.com
+                    </footer>
                 </Grid>
-
+                
             </Grid>
         </div>
     );

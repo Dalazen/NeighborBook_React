@@ -96,7 +96,12 @@ export default function RecadoRegistro(props) {
                     style={{ float: "right" }}>
                     Cancelar
                 </Button>
+                <footer> 
+                    Desenvolvido por Guilherme Dalazen
+                    <br/>Email: guilhermebatistellad@gmail.com
+                </footer>
             </Grid>
+            
         </Grid >
     )
 }
