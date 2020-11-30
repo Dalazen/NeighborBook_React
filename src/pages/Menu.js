@@ -4,8 +4,9 @@ import {
     Button,
     Grid,
     Paper,
+    MenuItem,
+    Menu,
     MenuList,
-    MenuItem
 }
     from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
@@ -16,10 +17,19 @@ import BookLista from './screen/BookLista'
 import BookEmprestimo from './screen/BookEmprestimo'
 import Recados from './screen/Recados'
 
-export default function Menu() {
+export default function Menus() {
     let history = useHistory();
 
     const [screen, setScreen] = useState(0)
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     const logoff = () => {
         sessionStorage.removeItem("uuid")
@@ -35,6 +45,7 @@ export default function Menu() {
 
     return (
         <div>
+
             <Grid container spacing={1}>
                 <Grid item sm={10} xs={12}>
 
@@ -50,15 +61,23 @@ export default function Menu() {
                 </Grid>
                 <Grid item sm={2} xs={12}>
                     <Grid item sm={12} xs={12}>
-                        <Paper>
-                            <MenuList>
-                                <MenuItem onClick={() => setScreen(0)}>Menu</MenuItem>
-                                <MenuItem onClick={() => setScreen(1)}>Acervo de livros</MenuItem>
-                                <MenuItem onClick={() => setScreen(2)}>Registrar seu livro</MenuItem>
-                                <MenuItem onClick={() => setScreen(3)}>Emprestimos</MenuItem>
-                                <MenuItem onClick={() => setScreen(4)}>Recados</MenuItem>
-                            </MenuList>
-                        </Paper>
+                        <MenuList>
+                            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                            Abrir Menu
+                            </Button>
+                            <Menu
+                                id="simple-menu"
+                                anchorEl={anchorEl}
+                                keepMounted
+                                open={Boolean(anchorEl)}
+                                onClose={handleClose}>
+                                <MenuItem onClick={() => setScreen(0)&&handleClose}>Home</MenuItem>
+                                <MenuItem onClick={() => setScreen(1)&&handleClose}>Acervo de livros</MenuItem>
+                                <MenuItem onClick={() => setScreen(2)&&handleClose}>Registrar seu livro</MenuItem>
+                                <MenuItem onClick={() => setScreen(3)&&handleClose}>Emprestimos</MenuItem>
+                                <MenuItem onClick={() => setScreen(4)&&handleClose}>Recados</MenuItem>
+                            </Menu>
+                        </MenuList>
                     </Grid>
                 </Grid>
                 <Grid item sm={10} xs={12}>
@@ -66,16 +85,12 @@ export default function Menu() {
                         {screen === 0 &&
                             <> 
                             <br/>⠀Bem Vindo!!<br/>
-                            <br/>⠀Este site tem por objetivo criar uma biblioteca comunitária,
+                            <br/>Este site tem por objetivo criar uma biblioteca comunitária,
                             permitindo aos usuários cadastrar seus livros e requerir empréstimos dos
                             livros já cadastrados, entretanto como o objetivo do mesmo é criar um "laço"
                             entre os usuários, qualquer usuário pode adicionar ou remover os livros cadastrados
                             então use esta função com cuidado!!<br/>
-                            <br/>⠀Para prosseguir em plataforma mobile, selecione uma opção no Menu em cima. <br/>
-                            <br/>↑↑↑↑↑↑ ⠀↑↑↑↑↑↑ ⠀↑↑↑↑↑↑ <br/>
-                            <br/>⠀Para prosseguir, selecione uma opção no Menu ao lado. <br/>
-                            <br/>← ← ← ← ← ← ⠀ ← ← ← ← ← ← ⠀ ← ← ← ← ← ← <br/>
-                            <br/>⠀Qualquer usuário tóxico será banido imediamente!<br/>
+                            <br/>⠀Qualquer usuário que publicar conteúdo ofensivo será banido imediamente!<br/>
                             <br/><br/>
                             </> }
                         {screen === 1 &&
