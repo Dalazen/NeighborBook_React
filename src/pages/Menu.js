@@ -105,10 +105,6 @@ export default function Menus() {
                     </Paper>
                     <br/>
                     <br/>
-                    <footer> 
-                        Desenvolvido por Guilherme Dalazen
-                        <br/>Email: guilhermebatistellad@gmail.com
-                    </footer>
                 </Grid>
 
             </Grid>
